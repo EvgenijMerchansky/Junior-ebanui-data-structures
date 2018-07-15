@@ -1,0 +1,11 @@
+/home/molodoy/Desktop/structures-c#/bin/Debug/netcoreapp2.1/structures-c#.deps.json
+/home/molodoy/Desktop/structures-c#/bin/Debug/netcoreapp2.1/structures-c#.runtimeconfig.json
+/home/molodoy/Desktop/structures-c#/bin/Debug/netcoreapp2.1/structures-c#.runtimeconfig.dev.json
+/home/molodoy/Desktop/structures-c#/bin/Debug/netcoreapp2.1/structures-c#.dll
+/home/molodoy/Desktop/structures-c#/bin/Debug/netcoreapp2.1/structures-c#.pdb
+/home/molodoy/Desktop/structures-c#/obj/Debug/netcoreapp2.1/structures-c#.csprojAssemblyReference.cache
+/home/molodoy/Desktop/structures-c#/obj/Debug/netcoreapp2.1/structures-c#.csproj.CoreCompileInputs.cache
+/home/molodoy/Desktop/structures-c#/obj/Debug/netcoreapp2.1/structures-c#.AssemblyInfoInputs.cache
+/home/molodoy/Desktop/structures-c#/obj/Debug/netcoreapp2.1/structures-c#.AssemblyInfo.cs
+/home/molodoy/Desktop/structures-c#/obj/Debug/netcoreapp2.1/structures-c#.dll
+/home/molodoy/Desktop/structures-c#/obj/Debug/netcoreapp2.1/structures-c#.pdb
