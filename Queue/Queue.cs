@@ -33,11 +33,13 @@ class CustomQueue<T> {
         T[] UpdatedStore = new T[this.Store.Length - 1];
         for (int I = 0; I < this.Store.Length; I++) 
         {
-            if (this.CheckFirst) {
-
+            if (this.CheckFirst) 
+            {
                 UpdatedStore[I - 1] = this.Store[I];
 
-            } else {
+            } 
+            else 
+            {
                 this.CheckFirst = true;
                 continue;
             }    

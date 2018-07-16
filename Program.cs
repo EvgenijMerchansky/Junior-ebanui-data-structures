@@ -29,6 +29,22 @@ namespace structures_c_
             //Queuery.Peek();
             Queuery.Remove();
             //System.Console.WriteLine(Queuery.QueueSize() + " - QueueSize 2 2 2 2");
+
+            StackBasedOnArray<int> StackOnArray = new StackBasedOnArray<int>();
+
+            StackOnArray.Push(15);
+            StackOnArray.Push(20);
+            StackOnArray.Push(25);
+
+            StackOnArray.Pop();
+            StackOnArray.Pop();
+            int StackItem = StackOnArray.Pop();
+            System.Console.WriteLine("Stack item: " + StackItem);
+
+            StackOnArray.Push(30);
+            StackOnArray.Push(35);
+
+            System.Console.WriteLine("Stack size: " + StackOnArray.Size());
         }
     }
 }
