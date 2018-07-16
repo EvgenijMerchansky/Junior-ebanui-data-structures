@@ -1,72 +1,71 @@
 using System; 
 class LinkedLIsts <T>
 {
-    private T CurrentNode;
-    private T NextNode;
-    private int InitialArrayLength = 1;
-    private T[] InitialArray = new T[0];
+    private Node<T> Head;
+    private Node<T> Tail;
+    private int Length = 0;
+
+    private string Chain = "Root: ";
 
     public LinkedLIsts () 
     {
 
     }
-    private T CreateNodeWithLink (T Item)
-    {
-        if (this.InitialArray.Length == 0) 
-        {
-            T NodeWithLink = new Node<T>().CreateNode(Item, default(T));
-            return NodeWithLink;
-        }
-        else
-        {
-            T PreviousElem = this.InitialArray[this.InitialArray.Length - 1];            
-            T NodeWithLink = new Node<T>().CreateNode(Item, PreviousElem);
-            return NodeWithLink;
-        }
-    }
-    private void ToEnlarge () 
-    {
-        T[] UpdatedArray = new T[this.InitialArray.Length + 1];
-        for (int I = 0; I < this.InitialArray.Length; I++) 
-        {
-            UpdatedArray[I] = InitialArray[I];
-        }
-        this.InitialArray = UpdatedArray;
-    }
+
     public void Add(T Item) 
     {
-        T ArrayItem = CreateNodeWithLink(Item);
-        if (this.InitialArray.Length != 0)
+        Node<T> NewNode = new Node<T>(Item);
+
+        if (Head == null) 
         {
-            ToEnlarge();
-            this.InitialArray[this.InitialArray.Length - 1] = ArrayItem;
+            Head = NewNode;
         }
         else
         {
-            ToEnlarge();
-            this.InitialArray[0] = ArrayItem;
+            Tail.NextNode = NewNode;
         }
+
+        Tail = NewNode;
+        this.Length = this.Length + 1;
+        this.Chain = this.Chain + "=> |" + NewNode.GetData() + "| ";
     }
-    public T Get(int Idx) 
+
+    public void Remove(T Item)
     {
-        return this.InitialArray[Idx];
-    }
-    public void Remove(int Idx) {
-        T[] UpdatedArray = new T[this.InitialArray.Length - 1];
-        for (int I = 0; I > this.InitialArray.Length; I++) 
+        Node<T> Current = Head;
+        Node<T> Previous = Tail;
+
+        while(Current != null)
         {
-            if (Idx == I)
+            if (Current.GetData().Equals(Item))
             {
-                continue;
+                Previous.NextNode = Current.NextNode;
+                if (Current.NextNode == null) 
+                {
+                    Tail = Previous;
+                }
             }
-            else 
+            else
             {
-                UpdatedArray[I] = CreateNodeWithLink(this.InitialArray[I]);
+                Head = Head.NextNode;
+                if (Head == null)
+                {
+                    Tail = null;
+                }
             }
-        }        
-        this.InitialArray = UpdatedArray;
+            this.Length = this.Length =- 1;
+            System.Console.WriteLine(Current.GetData() + " <- data");
+        }
+        Previous = Current;
+        Current = Current.NextNode;
     }
+
+    public void GetChain()
+    {
+        System.Console.WriteLine(this.Chain);
+    }
+
     public int Size() {
-        return this.InitialArray.Length;
+        return this.Length;
     }
 }

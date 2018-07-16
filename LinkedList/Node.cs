@@ -1,35 +1,16 @@
 using System;
  class Node<T>
  {
-     private T CurrentNode;
-     private T NextNode;
-     public T CreateNode (T Item, T PreviousElem) 
-     {
-         if (PreviousElem == null) 
-         {
-             this.CurrentNode = Item;
-             this.NextNode = default(T);
-             return Item;
-         } 
-         else 
-         {
-             this.CurrentNode = PreviousElem;
-             this.NextNode = Item; 
-             return Item; 
-         }
-     }
-     public T currentNode 
-     {
-         get
-         {
-             return this.CurrentNode;
-         }
-     }
-     public T nextNode 
-     {
-         get
-         {
-             return this.NextNode;
-         }
-     }
+    private T Data;
+    public Node (T Data) 
+    {
+        this.Data = Data;
+    }
+
+    public T GetData()
+    {
+        return this.Data;
+    }
+
+    public Node<T> NextNode { get; set; }
  }
